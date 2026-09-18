@@ -18,7 +18,6 @@ main :: Effect Unit
 main =
   runTest do
     runChapterExamples
-    {-  Move this block comment starting point to enable more tests
     suite "Exercise Group - Recursion" do
       suite "Exercise - isEven" do
         test "0 is even" do
@@ -42,6 +41,7 @@ main =
         test "-19 is odd" do
           Assert.equal false
             $ isEven (-19)
+
       suite "Exercise - countEven" do
         test "[] has none" do
           Assert.equal 0
@@ -70,6 +70,7 @@ main =
         test "Filter negative numbers" do
           Assert.equal [ 0.0, 2.0, 3.0 ]
             $ keepNonNegative [ -1.5, -1.0, 0.0, -0.1, 2.0, 3.0, -4.0 ]
+            {-  Move this block comment starting point to enable more tests
       suite "Exercise - <$?> infix operator for filter" do
         test "Define <$?> operator for filter" do
           Assert.equal [ 1, 1 ]
@@ -78,6 +79,7 @@ main =
         test "keepNonNegativeRewrite " do
           Assert.equal [ 0.0, 2.0, 3.0 ]
             $ keepNonNegativeRewrite [ -1.5, -1.0, 0.0, -0.1, 2.0, 3.0, -4.0 ]
+            -}
     suite "Exercise Group - Flattening, Comprehensions, Do Notation, and Guards" do
       test "Exercise - isPrime" do
         assertFalse "0 is not prime"
@@ -111,6 +113,7 @@ main =
           [ [ "5", "five" ], [ "5", "six" ], [ "6", "five" ], [ "6", "six" ] ]
           [ "5", "6" ]
           [ "five", "six" ]
+                  {-
       suite "Exercise - triples" do
         -- Sorting to allow for any ordering
         test "single element array result" do

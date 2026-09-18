@@ -17,7 +17,7 @@ main :: Effect Unit
 main =
   runTest do
     runChapterExamples
-    {-  Move this block comment starting point to enable more tests
+   
     suite "Show Me!" do
       test "Show Point" do
         Assert.equal "(1.0, 2.0)"
@@ -73,6 +73,11 @@ main =
         test "text" do
           Assert.equal "(Text (1.0, 2.0) \"Hello\")"
             $ show $ Text (Point {x: 1.0, y: 2.0}) "Hello"
+      suite "Semigroup NonEmpty" do
+        test "append" do
+          Assert.equal (NonEmpty 1 [ 2, 3, 4, 5, 6 ])
+            $ NonEmpty 1 [ 2, 3 ]
+            <> NonEmpty 4 [ 5, 6 ]
     suite "Type Class Constraints" do
       suite "Eq NonEmpty" do
         test "equals" do
@@ -82,11 +87,6 @@ main =
           Assert.expectFailure "should not be equal"
             $ Assert.equal (NonEmpty 1 [ 2, 3 ])
             $ NonEmpty 2 [ 2, 3 ]
-      suite "Semigroup NonEmpty" do
-        test "append" do
-          Assert.equal (NonEmpty 1 [ 2, 3, 4, 5, 6 ])
-            $ NonEmpty 1 [ 2, 3 ]
-            <> NonEmpty 4 [ 5, 6 ]
       suite "Functor NonEmpty" do
         test "map" do
           Assert.equal (NonEmpty 10 [ 20, 30 ])
@@ -116,6 +116,7 @@ main =
           Assert.equal LT
             $ compare (Finite 5)
             $ Finite 6
+  {-  Move this block comment starting point to enable more tests
       suite "Foldable NonEmpty" do
         test "foldl" do
           Assert.equal 123
