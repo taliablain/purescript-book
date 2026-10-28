@@ -96,6 +96,7 @@ main =
           test "Nothing" do
             Assert.equal (Nothing : Nil)
               $ combineMaybe (Nothing :: Maybe (List Char))
+    -}
     suite "Exercise Group - Applicative Validation" do
       suite "Exercise - stateRegex" do
         let
@@ -155,6 +156,7 @@ main =
         leaf x = Branch Leaf x Leaf
         intTree :: Tree Int
         intTree = Branch (Branch (leaf 1) 2 (leaf 3)) 4 (Branch (leaf 5) 6 (leaf 7))
+           {-
       suite "Exercise - traverse" do
         suite "Functor Tree" do
           test "Functor - map" do
