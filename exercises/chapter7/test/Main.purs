@@ -156,7 +156,6 @@ main =
         leaf x = Branch Leaf x Leaf
         intTree :: Tree Int
         intTree = Branch (Branch (leaf 1) 2 (leaf 3)) 4 (Branch (leaf 5) 6 (leaf 7))
-           {-
       suite "Exercise - traverse" do
         suite "Functor Tree" do
           test "Functor - map" do
@@ -200,12 +199,14 @@ main =
           $ runWriter
           $ traversePreOrder (\x -> tell [ x ])
           $ Branch (Branch (leaf 3) 2 (leaf 4)) 1 (Branch (leaf 6) 5 (leaf 7))
+      
       test "Exercise - traversePostOrder" do
         Assert.equal (1 .. 7)
           $ snd
           $ runWriter
           $ traversePostOrder (\x -> tell [ x ])
           $ Branch (Branch (leaf 1) 3 (leaf 2)) 7 (Branch (leaf 4) 6 (leaf 5))
+      
       suite "Exercise - validatePersonOptionalAddress" do
         let
           examplePerson =
@@ -236,6 +237,7 @@ main =
         test "Nothing" do
           Assert.equal Nothing
             $ sequenceUsingTraverse [ Just 1, Nothing ]
+          {-
       suite "Exercise - traverseUsingSequence" do
         test "Just" do
           Assert.equal (Just [ 1, 2 ])
@@ -243,8 +245,8 @@ main =
         test "Nothing" do
           Assert.equal Nothing
             $ traverseUsingSequence fromNumber [ 1.0, 2.7 ]
-
 -}
+
 runChapterExamples :: TestSuite
 runChapterExamples =
   test "Todo for book maintainers - Add tests for chapter examples" do

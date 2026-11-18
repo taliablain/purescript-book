@@ -12,6 +12,7 @@ You can edit this file as you like.
   , "integers"
   , "lists"
   , "maybe"
+  , "ordered-collections"
   , "prelude"
   , "strings"
   , "test-unit"
